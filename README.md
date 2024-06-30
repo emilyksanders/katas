@@ -1,2 +1,2 @@
-# eks-template-repo
-A repo for me to clone down any time I need a new one.
+# Katas Repo
+A place for me to store my work and solutions to kata challenges on CodeWars.com.
