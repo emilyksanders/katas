@@ -25,13 +25,14 @@ def digital_root(n):
   return n
    
   
-  
-
-
-
-
-
-
+# n =   493193
+# n%9 or n
+# n or n%9
+# n and 9
+# 
+# def digital_root_bad(n):
+# 	return n%9 or n and 9 
+# 
 
 
 
