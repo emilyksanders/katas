@@ -10,17 +10,23 @@ def sum_for_list(X):
   ## FIND PRIME FACTORS
   
   # define potential prime factors based on positive versions of all nums
-  max_fact = max([abs(i) for i in X])
+  # max_fact = max([abs(i) for i in X])
+  max_fact = math.ceil(math.sqrt(max([abs(i) for i in X])))
   
   # all odds in range
-  factors = [i for i in list(range(7, (max_fact+1), 2))] 
-  
-  # eliminate easy ones
   t0 = time.perf_counter()
-  factors = [i for i in factors if i%3!=0]
-  factors = [i for i in factors if i%5!=0]
+  factors = [
+    i for i in list(range(7, (max_fact+1), 2))
+    if ((i%3!=0) or (i%5!=0))]
   t1 = time.perf_counter()
   print(t1-t0)
+  
+  # eliminate easy ones
+  # t0 = time.perf_counter()
+  # factors = [i for i in factors if i%3!=0]
+  # factors = [i for i in factors if i%5!=0]
+  # t1 = time.perf_counter()
+  # print(t1-t0)
   
   # define a container
   primes = [2, 3, 5] # we know these are prime
@@ -32,7 +38,8 @@ def sum_for_list(X):
   t0 = time.perf_counter()
   p = [
     [i, 
-    [j for j in list(range(2, (math.ceil(math.sqrt(i)))+1))  # maybe just get one sqrt??
+    # [j for j in list(range(2, (math.ceil(math.sqrt(i)))+1))  # maybe just get one sqrt??
+    [j for j in list(range(2, (max_fact+1)))
     # [j for j in list(range(2, (i+1)))
       if i%j==0]  ]
     for i in factors  ]
