@@ -55,6 +55,7 @@ def same_structure_as(list_1, list_2):
   
   z = list(zip(list_1, list_2))
   
+  # stuff from Daddy
   def reset_scalars_new(nested_list):
     return [
     reset_scalars_new(item) if isinstance(item, list)
@@ -68,11 +69,6 @@ def same_structure_as(list_1, list_2):
   else:
     return False
 
-  
-  # define some conditions
-  
-
-
 def reset_scalars_new(nested_list):
   return [
   reset_scalars_new(item) if isinstance(item, list)
@@ -80,6 +76,50 @@ def reset_scalars_new(nested_list):
   for item in nested_list
   ]
 
+
+
+# back to me
 same_structure_as(x, z)
+
+def same_structure_as(list_1, list_2):
+  # Arg
+    # list_1: should be an array.  this is the one to compare TO
+    # list_2: should be an array.  this is the one we're TESTING
+  
+  if (type(list_1)!=list) or (type(list_2)!=list):
+    return False
+  
+  elif len(list_1)!=len(list_2):
+    return False
+  
+  z = list(zip(list_1, list_2))
+  
+  for i in z:
+    n = (((type(i[0])==list)*1) + ((type(i[1])==list)*1))
+    
+    if n==1:
+      return False
+    
+    if n==2:
+      
+    
+    if ((type(i[0])!=list) and (type(i[1])!=list)):
+      continue
+    if len(i[0])!=len(i[1]):
+      return False
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
